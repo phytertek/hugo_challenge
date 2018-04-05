@@ -1,6 +1,6 @@
 # Hugo Health Challenge
 
-My strategy while completing this challenge was to take most minimalist approach possible with the given requirements.
+My strategy while completing this challenge was to take the most minimalist approach possible with the given requirements.
 
 I chose to use the node:alpine image for the docker container and initialize node and the index.js files as the docker ENTRYPOINT in order to easily pipe aditional arguments given to the docker run command directly to the node script.
 
