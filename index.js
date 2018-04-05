@@ -5,7 +5,7 @@ if (!currency) return console.error('Please provide a currency name');
 
 https
   .get(
-    `https://api.coinmarketcap.com/v1/ticker/${currency}/?convert=USD`,
+    `https://api.coinmarketcap.com/v1/ticker/${currency.toLowerCase()}/?convert=USD`,
     response => {
       let data = '';
       response.on('data', chunk => (data += chunk));
@@ -20,7 +20,7 @@ https
         return console.log(
           `Current ${currency} data (USD):\n` +
             ` Price: $${price_usd}\n` +
-            ` Market cap: $${market_cap_usd}`
+            ` Market Cap: $${market_cap_usd}`
         );
       });
     }

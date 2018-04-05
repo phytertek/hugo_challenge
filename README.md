@@ -1,5 +1,13 @@
 # Hugo Health Challenge
 
+My strategy while completing this challenge was to take most minimalist approach possible with the given requirements.
+
+I chose to use the node:alpine image for the docker container and initialize node and the index.js files as the docker ENTRYPOINT in order to easily pipe aditional arguments given to the docker run command directly to the node script.
+
+The script expects a single argument, throwing an error if one is not included. It then uses the native node https library to create the GET request to the CoinMarketCap API with the given currency argument. If no results are found for the given currency, an error is thrown. If results are recieved, the price_usd and market_cap_usd properties of the result are logged to the console.
+
+I chose to use the https library in order to keep the script free of dependencies, allowing the build phase to skip package installation entirely.
+
 ## Build Command
 
 <code>$ docker build -t hugo</code>
