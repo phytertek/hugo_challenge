@@ -12,7 +12,7 @@ https
 
       response.on('end', () => {
         const result = JSON.parse(data);
-        if (!!result.error)
+        if (result.error)
           return console.error(`${currency} is not a valid currency`);
 
         const { price_usd, market_cap_usd } = result[0];
